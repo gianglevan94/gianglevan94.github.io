@@ -698,7 +698,7 @@ a{
   animation-fill-mode: both;
 }
 
-.post-titlearea span:first-child{
+.post-titlearea h1:first-child{
     width: auto;
     height: auto;
     display: block;
@@ -714,7 +714,7 @@ a{
     font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
     /*font-family: 'Kaushan Script', cursive;*/
 }
-.post-titlearea span:nth-child(2){
+.post-titlearea h1:nth-child(2){
     display: block;
     width: auto;
     height: auto;
@@ -730,7 +730,7 @@ a{
     top: 280px;
     font-size: 25px;
 }
-.post-titlearea span:nth-child(3){
+.post-titlearea h1:nth-child(3){
     display: block;
     width: auto;
     height: auto;

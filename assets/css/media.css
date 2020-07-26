@@ -32,7 +32,7 @@
   .post-top{
     height: 395px;
   }
-  .post-titlearea span:first-child{
+  .post-titlearea h1:first-child{
     top: 40px;
     font-size: 28px;
     font-weight: 450;
