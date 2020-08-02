@@ -5,7 +5,7 @@ description: 'nếu bạn muốn gửi link cho bạn bè để khoe thành qu�
 date: 2020-08-02
 author: Giangg
 color: rgb(255,210,32)
-cover: '/assets/images/nes-datepicker.png'
+cover: '/assets/images/react-app.png'
 tags: ReactJS S3 Amazon
 ---
 
@@ -38,7 +38,7 @@ npm install gh-pages --save-dev
 
 Tiếp đến là thay đổi một chút thông tin của file `package.json`. Đầu tiên bạn cần làm là thêm địa chỉ homepage của app. url sẽ có dạng https://<username github>.github.io/<tên của repo>. Ví dụ như dưới là username github của mình là `gianglevan94` còn tên của repo là `ugly-date-picker`.
 
-```json
+```
 "name": "date-picker",
 "version": "0.1.0",
 "private": true,
@@ -50,7 +50,7 @@ Tiếp đến là thay đổi một chút thông tin của file `package.json`. 
 
 Sau đó thì cập nhật lại scripts 1 tí
 
-```json
+```
 "scripts": {
     "start": "react-scripts start",
     "deploy": "gh-pages -d build",

@@ -181,25 +181,25 @@ npm start
 
 <p>Tiếp đến là thay đổi một chút thông tin của file <code class="language-plaintext highlighter-rouge">package.json</code>. Đầu tiên bạn cần làm là thêm địa chỉ homepage của app. url sẽ có dạng https://<username github="">.github.io/<tên của="" repo="">. Ví dụ như dưới là username github của mình là `gianglevan94` còn tên của repo là `ugly-date-picker`.</tên></username></p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"date-picker"</span><span class="err">,</span><span class="w">
-</span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1.0"</span><span class="err">,</span><span class="w">
-</span><span class="nl">"private"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="err">,</span><span class="w">
-</span><span class="nl">"homepage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://gianglevan94.github.io/ugly-date-picker"</span><span class="err">,</span><span class="w">
-</span><span class="nl">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"@testing-library/jest-dom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^4.2.4"</span><span class="p">,</span><span class="w">
- </span><span class="err">///</span><span class="w">   
-</span></code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"name": "date-picker",
+"version": "0.1.0",
+"private": true,
+"homepage": "https://gianglevan94.github.io/ugly-date-picker",
+"dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+ ///   
+</code></pre></div></div>
 
 <p>Sau đó thì cập nhật lại scripts 1 tí</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"react-scripts start"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"deploy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gh-pages -d build"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"react-scripts build"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"react-scripts test"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"eject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"react-scripts eject"</span><span class="w">
-</span><span class="p">}</span><span class="err">,</span><span class="w">
-</span></code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"scripts": {
+    "start": "react-scripts start",
+    "deploy": "gh-pages -d build",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+},
+</code></pre></div></div>
 <p><img src="/assets/images/gh-page-package-json.png" alt="package json" /></p>
 
 <p>Bước tiếp theo là bạn tạo 1 repo trên github. Nhớ tạo đúng tên như mục <code class="language-plaintext highlighter-rouge">homepage</code> ở trên.</p>
