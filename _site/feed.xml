@@ -1,4 +1,66 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-26T21:43:20+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Cốt đơ</title><subtitle>Các bài viết nhảm nhí về coder</subtitle><author><name>true</name></author><entry><title type="html">Viết component datepicker bằng javascript thuần</title><link href="http://localhost:4000/viet-thu-vien-datepicker-bang-javascript.html" rel="alternate" type="text/html" title="Viết component datepicker bằng javascript thuần" /><published>2020-07-26T00:00:00+07:00</published><updated>2020-07-26T00:00:00+07:00</updated><id>http://localhost:4000/viet-thu-vien-datepicker-bang-javascript</id><content type="html" xml:base="http://localhost:4000/viet-thu-vien-datepicker-bang-javascript.html">&lt;p&gt;Khi các bạn làm việc với các framework frontend như Vue, Angular hay React (thực ra nó là thư viện, nhưng mình cứ coi như nó là framework đi), bạn sẽ không ít lần dùng các thư viện datepicker có ở trên github. Đã bao giờ bạn tự hỏi rằng những thư viện này được viết như thế nào chưa? Lúc đầu mình cũng nghĩ những thư viện này ẩn chứa 1 thuật toán rất chi là cao siêu, nhưng khi bắt đầu viết cho mình 1 component datepicker thì lại thấy nó cực kỳ đơn giản. Hãy cùng bắt đầu nhé&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-08-02T21:24:24+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Cốt đơ</title><subtitle>Các bài viết nhảm nhí về coder</subtitle><author><name>true</name></author><entry><title type="html">Deploy react app lên github page</title><link href="http://localhost:4000/deploy-react-app-len-github-page.html" rel="alternate" type="text/html" title="Deploy react app lên github page" /><published>2020-08-02T00:00:00+07:00</published><updated>2020-08-02T00:00:00+07:00</updated><id>http://localhost:4000/deploy-react-app-len-github-page</id><content type="html" xml:base="http://localhost:4000/deploy-react-app-len-github-page.html">&lt;p&gt;Khi phát triển một trang sử dụng ReactJS, nếu bạn muốn gửi link cho bạn bè để khoe thành quả, hay deploy để test thì bạn làm như thế nào? Amazon s3 là một nơi tốt để deploy React app. Và tuyệt vời hơn nữa là nó hoàn toàn miễn phí.&lt;/p&gt;
+
+&lt;h2 id=&quot;nội-dung-chính&quot;&gt;Nội dung chính&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Tạo 1 react app đơn giản&lt;/li&gt;
+  &lt;li&gt;Cấu hình để deploy lên github page&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;cần-chuẩn-bị&quot;&gt;Cần chuẩn bị&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Tài khoản github&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;tạo-react-app-đơn-giản&quot;&gt;Tạo react app đơn giản&lt;/h3&gt;
+&lt;p&gt;Mình sẽ dùng &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;create-react-app&lt;/code&gt; để tạo 1 react app để demo.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;create-react-app demo-github-pages
+cd demo-github-pages
+npm start
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Và đây là thành quả&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/react-app.png&quot; alt=&quot;react app&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;cấu-hình-để-deploy&quot;&gt;Cấu hình để deploy&lt;/h2&gt;
+
+&lt;p&gt;Sau đó thì cài đặt thư viện &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt; bằng cách chạy&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install gh-pages --save-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Tiếp đến là thay đổi một chút thông tin của file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;package.json&lt;/code&gt;. Đầu tiên bạn cần làm là thêm địa chỉ homepage của app. url sẽ có dạng https://&lt;username github=&quot;&quot;&gt;.github.io/&lt;tên của=&quot;&quot; repo=&quot;&quot;&gt;. Ví dụ như dưới là username github của mình là `gianglevan94` còn tên của repo là `ugly-date-picker`.&lt;/tên&gt;&lt;/username&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;date-picker&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;version&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;0.1.0&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;private&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;homepage&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://gianglevan94.github.io/ugly-date-picker&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;dependencies&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;@testing-library/jest-dom&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^4.2.4&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;///&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;   
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Sau đó thì cập nhật lại scripts 1 tí&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;start&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;react-scripts start&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;deploy&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;gh-pages -d build&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;build&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;react-scripts build&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;test&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;react-scripts test&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;eject&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;react-scripts eject&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/gh-page-package-json.png&quot; alt=&quot;package json&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Bước tiếp theo là bạn tạo 1 repo trên github. Nhớ tạo đúng tên như mục &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;homepage&lt;/code&gt; ở trên.&lt;/p&gt;
+
+&lt;h2 id=&quot;deploy&quot;&gt;Deploy&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Đầu tiên là chạy lệnh build &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm run build&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Tiếp theo là chạy lệnh deploy &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm run deploy&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Sau khi hoàn chạy hoàn tất script thì bạn vào địa chỉ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;homepage&lt;/code&gt; vừa cấu hình lúc nãy để xem thành quả. Nhớ là clear cache trước nhé.&lt;/p&gt;
+
+&lt;p&gt;Trên đây là một bài hướng dẫn nho nhỏ để deploy react app lên github pages. Hi vọng sẽ hữu ích cho bạn. Nếu có bất cứ thắc mắc gì thì hãy comment bên dưới nhé. Cảm ơn bạn đã đọc bài.&lt;/p&gt;</content><author><name>Giangg</name></author><category term="ReactJS" /><category term="S3" /><category term="Amazon" /><summary type="html">Khi phát triển một trang sử dụng ReactJS, nếu bạn muốn gửi link cho bạn bè để khoe thành quả, hay deploy để test thì bạn làm như thế nào? Amazon s3 là một nơi tốt để deploy React app. Và tuyệt vời hơn nữa là nó hoàn toàn miễn phí.</summary></entry><entry><title type="html">Viết component datepicker bằng javascript thuần</title><link href="http://localhost:4000/viet-thu-vien-datepicker-bang-javascript.html" rel="alternate" type="text/html" title="Viết component datepicker bằng javascript thuần" /><published>2020-07-26T00:00:00+07:00</published><updated>2020-07-26T00:00:00+07:00</updated><id>http://localhost:4000/viet-thu-vien-datepicker-bang-javascript</id><content type="html" xml:base="http://localhost:4000/viet-thu-vien-datepicker-bang-javascript.html">&lt;p&gt;Khi các bạn làm việc với các framework frontend như Vue, Angular hay React (thực ra nó là thư viện, nhưng mình cứ coi như nó là framework đi), bạn sẽ không ít lần dùng các thư viện datepicker có ở trên github. Đã bao giờ bạn tự hỏi rằng những thư viện này được viết như thế nào chưa? Lúc đầu mình cũng nghĩ những thư viện này ẩn chứa 1 thuật toán rất chi là cao siêu, nhưng khi bắt đầu viết cho mình 1 component datepicker thì lại thấy nó cực kỳ đơn giản. Hãy cùng bắt đầu nhé&lt;/p&gt;
 
 &lt;h2 id=&quot;thành-quả&quot;&gt;Thành quả&lt;/h2&gt;
 
@@ -10,7 +72,7 @@
 
 &lt;p&gt;Mô ta 1 chút về component datepicker này. Như các bạn thấy nó sẽ gồm 35 ô số có thể chứa ngày của tháng hiện tại, ngày của tháng trước, và ngày của tháng kế tiếp. Ngày đầu tiên của tháng hiện tại sẽ luôn nằm ở hàng đầu tiên, vậy mấu chốt ở đây là bạn phải xác định được ngày đầu tiên của tháng là vào thứ mấy, rồi từ đấy fill vào các ô trước đó là ngày của tháng trước. Dưới đây là một vài đoạn code của thuật thoán.&lt;/p&gt;
 
-&lt;p&gt;Đầu tiên là init các ngày của mảng mình sẽ có hàm &lt;code class=&quot;highlighter-rouge&quot;&gt;getDays&lt;/code&gt; bên trong đấy sẽ có 2 hàm là &lt;code class=&quot;highlighter-rouge&quot;&gt;getDaysOfPrevMonth&lt;/code&gt; và &lt;code class=&quot;highlighter-rouge&quot;&gt;getDaysOfMonth&lt;/code&gt; sẽ trả về các ngày của tháng trước, và các ngày sau đó. Vì sao đoạn này mình lại &lt;code class=&quot;highlighter-rouge&quot;&gt;days.slice(0, MAX_DAYS)&lt;/code&gt; ? Đoạn này do mình lười tính toàn số ngày của tháng hiện tại và tháng tiếp đó nên mình sẽ lấy dư ra vài ngày và cắt bớt. Bạn đọc code sẽ hiểu thêm.&lt;/p&gt;
+&lt;p&gt;Đầu tiên là init các ngày của mảng mình sẽ có hàm &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getDays&lt;/code&gt; bên trong đấy sẽ có 2 hàm là &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getDaysOfPrevMonth&lt;/code&gt; và &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getDaysOfMonth&lt;/code&gt; sẽ trả về các ngày của tháng trước, và các ngày sau đó. Vì sao đoạn này mình lại &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;days.slice(0, MAX_DAYS)&lt;/code&gt; ? Đoạn này do mình lười tính toàn số ngày của tháng hiện tại và tháng tiếp đó nên mình sẽ lấy dư ra vài ngày và cắt bớt. Bạn đọc code sẽ hiểu thêm.&lt;/p&gt;
 
 &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getDays&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;month&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;days&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[...&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getDaysOfPrevMonth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;month&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getDaysOfMonth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;month&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)];&lt;/span&gt;
@@ -19,7 +81,7 @@
 &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Đây là hàm lấy gày của tháng hiện tại như bạn có thể thấy là hàm &lt;code class=&quot;highlighter-rouge&quot;&gt;getFirstDayIndex&lt;/code&gt; sẽ trả về ngày đầu tiên của tháng là index thứ bao nhiêu của mảng. Sau đó sẽ lùi dần về ngày của các tháng trước đó&lt;/p&gt;
+&lt;p&gt;Đây là hàm lấy gày của tháng hiện tại như bạn có thể thấy là hàm &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getFirstDayIndex&lt;/code&gt; sẽ trả về ngày đầu tiên của tháng là index thứ bao nhiêu của mảng. Sau đó sẽ lùi dần về ngày của các tháng trước đó&lt;/p&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getDaysOfPrevMonth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;month&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;firstDayIndex&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getFirstDayIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;month&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
@@ -37,7 +99,7 @@
 &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Mình sẽ dùng hàm &lt;code class=&quot;highlighter-rouge&quot;&gt;getDay&lt;/code&gt; để lấy ra thứ hiện tại trong tháng (thứ 2, chủ nhật…) đồng thời cũng là index của mảng luôn. Ngoài ra javascript còn có hàm &lt;code class=&quot;highlighter-rouge&quot;&gt;getDate&lt;/code&gt; trả về ngày hôm đấy là ngày bao nhiêu của tháng nữa. 2 hàm này rất dễ lẫn lộn với nhau.&lt;/p&gt;
+&lt;p&gt;Mình sẽ dùng hàm &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getDay&lt;/code&gt; để lấy ra thứ hiện tại trong tháng (thứ 2, chủ nhật…) đồng thời cũng là index của mảng luôn. Ngoài ra javascript còn có hàm &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getDate&lt;/code&gt; trả về ngày hôm đấy là ngày bao nhiêu của tháng nữa. 2 hàm này rất dễ lẫn lộn với nhau.&lt;/p&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getFirstDayIndex&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;month&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;now&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
@@ -48,7 +110,7 @@
 &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Tiếp đến sẽ là hàm lấy tất cả những ngày còn lại. &lt;code class=&quot;highlighter-rouge&quot;&gt;MAX_DAYS&lt;/code&gt; của mình đang để là 35.&lt;/p&gt;
+&lt;p&gt;Tiếp đến sẽ là hàm lấy tất cả những ngày còn lại. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MAX_DAYS&lt;/code&gt; của mình đang để là 35.&lt;/p&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getDaysOfMonth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;month&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;days&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;

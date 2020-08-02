@@ -1,0 +1,329 @@
+<!-- 博文的布局-Layout -->
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 引入head标签 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-sclable=0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="nếu bạn muốn gửi link cho bạn bè để khoe thành quả, hay deploy để test thì bạn làm như thế nào? github page là một nơi tốt để deploy React app" />
+<meta name="keywords" content="" />
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/media.css">
+<link rel="stylesheet" href="/assets/css/animate.min.css">
+<link rel="stylesheet" href="/assets/css/pygments/pygments_default.css">
+<link rel="stylesheet" href="/assets/css/github-markdown.css">
+<!-- SNS-icon -->
+<script src="/assets/js/sns-icon.js"></script>
+<!-- share.css -->
+<link rel="stylesheet" href="/assets/css/share.min.css">
+<!-- font -->
+<link rel="stylesheet" href="/assets/css/font.css">
+<!-- <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Pacifico|Ubuntu|Roboto+Mono|Source+Sans+Pro" rel="stylesheet"> -->
+
+<!-- Favicon -->
+<link href="/assets/profile.jpg" rel="shortcut icon" />
+<link href="/assets/profile.jpg" rel="apple-touch-icon-precomposed" />
+<!-- Android Lolipop Theme Color -->
+<!-- <meta name="theme-color" content="#1464FB"> -->
+<title>Deploy react app lên github page</title>
+<!-- 百度统计 -->
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- 谷歌分析 -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-174163233-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-174163233-1');
+</script>
+
+<!-- Android Lolipop Theme Color -->
+<meta name="theme-color" content=" rgb(255,210,32) ">
+</head>
+<body>
+
+<!-- 顶部锚点 -->
+<a id="htmlup" name="htmlup"></a>
+<!-- 引入博文顶部选项 -->
+
+<header id="post-header" style="background-color:rgb(255,210,32);">
+  <div class="top-center">
+      <div class="logo">
+          <a href="/" title="my awesome webtitle" style="color: white;">Cốt đơ</a>
+      </div>
+      <nav class="top-nav">
+          <ul>
+              
+                <li><a href="/" style="color: white;">Home</a></li>
+              
+                <li><a href="/tags.html" style="color: white;">Tags</a></li>
+              
+                <li><a href="/timeline.html" style="color: white;">Timeline</a></li>
+              
+                <li><a href="/about.html" style="color: white;">About</a></li>
+              
+          </ul>
+      </nav>
+      <div id="top-boot">
+        <a href="javascript:;" id="boot1" style="display:block;" onclick="document.getElementById('boot-area').style.display='block';document.getElementById('boot1').style.display='none';document.getElementById('boot2').style.display='block';"><img src="/assets/boot_white.png" alt=""></a>
+        <a href="javascript:;" id="boot2" style="display: none;" onclick="document.getElementById('boot-area').style.display='none';document.getElementById('boot1').style.display='block';document.getElementById('boot2').style.display='none';"><img src="/assets/boot_white.png" alt=""></a>
+      </div>
+  </div>
+
+</header>
+
+
+<!-- 引入移动下拉选项 -->
+<div id="boot-area">
+    <ul>
+        
+          <a href="/"><li>Home</li></a>
+        
+          <a href="/tags.html"><li>Tags</li></a>
+        
+          <a href="/timeline.html"><li>Timeline</li></a>
+        
+          <a href="/about.html"><li>About</li></a>
+        
+    </ul>
+</div>
+
+<!-- 引入博文顶部样式 -->
+<!-- 版本一 垃圾 -->
+<!-- <div class="wow fadeIn top" data-wow-duration="3.5s" >
+    <span class="wow fadeInUp" data-wow-delay="0.2s">Deploy react app lên github page</span>
+    <span class="wow fadeInUp" data-wow-delay="0.4s">nếu bạn muốn gửi link cho bạn bè để khoe thành quả, hay deploy để test thì bạn làm như thế nào? github page là một nơi tốt để deploy React app</span>
+    <span class="wow fadeInUp" data-wow-delay="0.4s">nếu bạn muốn gửi link cho bạn bè để khoe thành quả, hay deploy để test thì bạn làm như thế nào? github page là một nơi tốt để deploy React app</span>
+    <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;Giangg</span>
+</div> -->
+
+<!-- 版本二 可切换页面 -->
+
+<div class="post-top" style="background-color:rgb(255,210,32);">
+  <!-- 页面宽度大于800px -->
+  <div class="left-area">
+    
+      <a href="javascript:;" class="btn bounceInLeft animated" onmouseover="showLeft();this.style.color='rgb(255,210,32)';" onmouseout="goneLeft();this.style.color='rgba(0,0,0,.2)';"><</a>
+      <div id="left-tab" style="display:none;"><span class="left-san"></span><span class="left-main" style="color:rgb(255,210,32);"><sapn class="main">没有上一页咯</sapn></span></div>
+    
+  </div>
+  <div class="post-titlearea">
+    <h1 class="wow fadeInUp" data-wow-delay="0.2s">Deploy react app lên github page</h1>
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.4s">nếu bạn muốn gửi link cho bạn bè để khoe thành quả, hay deploy để test thì bạn làm như thế nào? github page là một nơi tốt để deploy React app</span> -->
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.4s">nếu bạn muốn gửi link cho bạn bè để khoe thành quả, hay deploy để test thì bạn làm như thế nào? github page là một nơi tốt để deploy React app</span> -->
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;Giangg</span> -->
+  </div>
+  <div class="right-area">
+    
+      <a href="/viet-thu-vien-datepicker-bang-javascript.html" class="btn bounceInRight self-animated" onmouseover="showRight();this.style.color='rgb(255,210,32)';" onmouseout="goneRight();this.style.color='rgba(0,0,0,.2)';">></a>
+      <div id="right-tab" style="display:none;"><span class="right-san"></span><span class="right-main" style="color:rgb(255,210,32);"><sapn class="main">Viết component datepicker bằng javascript thuần</sapn></span></div>
+    
+  </div>
+
+  <!-- 页面宽度小于800px -->
+  <div class="post-changearea">
+    
+      <a href="javascript:;" class="leftchange" style="border-right: 1px solid rgb(255,210,32);border-bottom: 2px solid rgb(255,210,32);"><span><br>...</span></a>
+    
+    
+      <a href="/viet-thu-vien-datepicker-bang-javascript.html" class="rightchange" style="border-left: 1px solid rgb(255,210,32);border-bottom: 2px solid rgb(255,210,32);"><span>Bài trước<br><br>Viết component datepicker bằng javascript thuần</span></a>
+    
+  </div>
+</div>
+
+
+<div class="markdown-body fadeInUp animated">
+
+  
+
+  <!-- 文章内容 -->
+  <p>Khi phát triển một trang sử dụng ReactJS, nếu bạn muốn gửi link cho bạn bè để khoe thành quả, hay deploy để test thì bạn làm như thế nào? Amazon s3 là một nơi tốt để deploy React app. Và tuyệt vời hơn nữa là nó hoàn toàn miễn phí.</p>
+
+<h2 id="nội-dung-chính">Nội dung chính</h2>
+<ul>
+  <li>Tạo 1 react app đơn giản</li>
+  <li>Cấu hình để deploy lên github page</li>
+</ul>
+
+<h2 id="cần-chuẩn-bị">Cần chuẩn bị</h2>
+<ul>
+  <li>Tài khoản github</li>
+</ul>
+
+<h3 id="tạo-react-app-đơn-giản">Tạo react app đơn giản</h3>
+<p>Mình sẽ dùng <code class="language-plaintext highlighter-rouge">create-react-app</code> để tạo 1 react app để demo.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>create-react-app demo-github-pages
+cd demo-github-pages
+npm start
+</code></pre></div></div>
+<p>Và đây là thành quả</p>
+
+<p><img src="/assets/images/react-app.png" alt="react app" /></p>
+
+<h2 id="cấu-hình-để-deploy">Cấu hình để deploy</h2>
+
+<p>Sau đó thì cài đặt thư viện <code class="language-plaintext highlighter-rouge">gh-pages</code> bằng cách chạy</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install gh-pages --save-dev
+</code></pre></div></div>
+
+<p>Tiếp đến là thay đổi một chút thông tin của file <code class="language-plaintext highlighter-rouge">package.json</code>. Đầu tiên bạn cần làm là thêm địa chỉ homepage của app. url sẽ có dạng https://<username github="">.github.io/<tên của="" repo="">. Ví dụ như dưới là username github của mình là `gianglevan94` còn tên của repo là `ugly-date-picker`.</tên></username></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"date-picker"</span><span class="err">,</span><span class="w">
+</span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1.0"</span><span class="err">,</span><span class="w">
+</span><span class="nl">"private"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="err">,</span><span class="w">
+</span><span class="nl">"homepage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://gianglevan94.github.io/ugly-date-picker"</span><span class="err">,</span><span class="w">
+</span><span class="nl">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"@testing-library/jest-dom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^4.2.4"</span><span class="p">,</span><span class="w">
+ </span><span class="err">///</span><span class="w">   
+</span></code></pre></div></div>
+
+<p>Sau đó thì cập nhật lại scripts 1 tí</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"react-scripts start"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"deploy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gh-pages -d build"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"react-scripts build"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"react-scripts test"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"eject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"react-scripts eject"</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span></code></pre></div></div>
+<p><img src="/assets/images/gh-page-package-json.png" alt="package json" /></p>
+
+<p>Bước tiếp theo là bạn tạo 1 repo trên github. Nhớ tạo đúng tên như mục <code class="language-plaintext highlighter-rouge">homepage</code> ở trên.</p>
+
+<h2 id="deploy">Deploy</h2>
+<ul>
+  <li>Đầu tiên là chạy lệnh build <code class="language-plaintext highlighter-rouge">npm run build</code></li>
+  <li>Tiếp theo là chạy lệnh deploy <code class="language-plaintext highlighter-rouge">npm run deploy</code></li>
+</ul>
+
+<p>Sau khi hoàn chạy hoàn tất script thì bạn vào địa chỉ <code class="language-plaintext highlighter-rouge">homepage</code> vừa cấu hình lúc nãy để xem thành quả. Nhớ là clear cache trước nhé.</p>
+
+<p>Trên đây là một bài hướng dẫn nho nhỏ để deploy react app lên github pages. Hi vọng sẽ hữu ích cho bạn. Nếu có bất cứ thắc mắc gì thì hãy comment bên dưới nhé. Cảm ơn bạn đã đọc bài.</p>
+
+
+  <!-- 引入share模块 -->
+  
+  <div class="social-share-wrapper">
+    <div class="social-share"></div>
+  </div>
+
+
+<!-- share.js -->
+<script src="/assets/js/social-share.min.js"></script>
+<script>
+  socialShare('.social-share', {
+    sites: [
+      
+        'twitter'
+        ,
+        
+      
+        'facebook'
+        
+      
+    ],
+    wechatQrcodeTitle: "分享到微信朋友圈",
+    wechatQrcodeHelper: '期待在朋友圈见到这篇文章'
+  });
+</script>
+
+</div>
+
+<!-- 底部锚点 -->
+<a id="htmldown" name="htmldown"></a>
+<!-- 引入评论模块 -->
+
+    <section class="post-footer-item comment">
+      <div id="disqus_thread"></div>
+    </section>
+
+    <script>
+      /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+      /*
+      var disqus_config = function () {
+      this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      };
+      */
+      (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+          s = d.createElement('script');
+        /*写入自己的disqus信息*/
+        s.src = '';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+
+    </script>
+
+
+
+
+
+
+
+<!-- 引入goto模块 -->
+<div class="bounceInRight animated go">
+  <a title="顶部切换页面" class="gototop" href="#htmlup" target="_self">
+    <div class="box" style="font-family:'ffad_matroregular';">
+        Top
+    </div>
+  </a>
+  <a title="底部有disqus评论哦" class="gotobottom" href="#htmldown" target="_self">
+    <div class="box" style="font-family:'ffad_matroregular';">
+        Foot
+    </div>
+  </a>
+</div>
+
+<!-- 引入页面底部模块 -->
+<footer id="bottom">
+  <br>
+  <span>Cốt đơ ©
+  
+  
+  2020
+  <br>
+  Powered by <a href="https://www.jekyll.com.cn/">Jekyll</a> | <a href="https://github.com/xukimseven/HardCandy-Jekyll">HardCandy-Jekyll</a></span>
+</footer>
+
+
+<!-- 引用wow.js的动画效果 -->
+<script src="/assets/js/wow.js"></script>
+<script>
+    var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        // offset: 600,
+        mobile: true,
+        live: true
+    });
+    wow.init();
+</script>
+<!-- 页面刷新回到顶部 -->
+<script>
+    window.onbeforeunload = function(){
+        //刷新后页面自动回到顶部
+        document.documentElement.scrollTop = 0;  //ie下
+        document.body.scrollTop = 0;  //非ie
+    }
+</script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

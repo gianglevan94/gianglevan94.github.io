@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="/assets/css/pygments/pygments_default.css">
 <link rel="stylesheet" href="/assets/css/github-markdown.css">
 <!-- SNS-icon -->
-<script src="//at.alicdn.com/t/font_856428_y9z6nq7zf5.js"></script>
+<script src="/assets/js/sns-icon.js"></script>
 <!-- share.css -->
 <link rel="stylesheet" href="/assets/css/share.min.css">
 <!-- font -->
@@ -40,7 +40,15 @@ var _hmt = _hmt || [];
 </script>
 
 <!-- 谷歌分析 -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-174163233-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'UA-174163233-1');
+</script>
 
 <!-- Android Lolipop Theme Color -->
 <meta name="theme-color" content=" rgb(255,210,32) ">
@@ -108,8 +116,8 @@ var _hmt = _hmt || [];
   <!-- 页面宽度大于800px -->
   <div class="left-area">
     
-      <a href="javascript:;" class="btn bounceInLeft animated" onmouseover="showLeft();this.style.color='rgb(255,210,32)';" onmouseout="goneLeft();this.style.color='rgba(0,0,0,.2)';"><</a>
-      <div id="left-tab" style="display:none;"><span class="left-san"></span><span class="left-main" style="color:rgb(255,210,32);"><sapn class="main">没有上一页咯</sapn></span></div>
+      <a href="/deploy-react-app-len-github-page.html" class="btn bounceInLeft animated" onmouseover="showLeft();this.style.color='rgb(255,210,32)';" onmouseout="goneLeft();this.style.color='rgba(0,0,0,.2)';"><</a>
+      <div id="left-tab" style="display:none;"><span class="left-san"></span><span class="left-main" style="color:rgb(255,210,32);"><sapn class="main">Deploy react app lên github page</sapn></span></div>
     
   </div>
   <div class="post-titlearea">
@@ -128,7 +136,7 @@ var _hmt = _hmt || [];
   <!-- 页面宽度小于800px -->
   <div class="post-changearea">
     
-      <a href="javascript:;" class="leftchange" style="border-right: 1px solid rgb(255,210,32);border-bottom: 2px solid rgb(255,210,32);"><span><br>...</span></a>
+      <a href="/deploy-react-app-len-github-page.html" class="leftchange" style="border-right: 1px solid rgb(255,210,32);border-bottom: 2px solid rgb(255,210,32);"><span>Bài tiếp<br><br>Deploy react app lên github page</span></a>
     
     
       <a href="javascript:;" class="rightchange" style="border-left: 1px solid rgb(255,210,32);border-bottom: 2px solid rgb(255,210,32);"><span><br>...</span></a>
@@ -154,7 +162,7 @@ var _hmt = _hmt || [];
 
 <p>Mô ta 1 chút về component datepicker này. Như các bạn thấy nó sẽ gồm 35 ô số có thể chứa ngày của tháng hiện tại, ngày của tháng trước, và ngày của tháng kế tiếp. Ngày đầu tiên của tháng hiện tại sẽ luôn nằm ở hàng đầu tiên, vậy mấu chốt ở đây là bạn phải xác định được ngày đầu tiên của tháng là vào thứ mấy, rồi từ đấy fill vào các ô trước đó là ngày của tháng trước. Dưới đây là một vài đoạn code của thuật thoán.</p>
 
-<p>Đầu tiên là init các ngày của mảng mình sẽ có hàm <code class="highlighter-rouge">getDays</code> bên trong đấy sẽ có 2 hàm là <code class="highlighter-rouge">getDaysOfPrevMonth</code> và <code class="highlighter-rouge">getDaysOfMonth</code> sẽ trả về các ngày của tháng trước, và các ngày sau đó. Vì sao đoạn này mình lại <code class="highlighter-rouge">days.slice(0, MAX_DAYS)</code> ? Đoạn này do mình lười tính toàn số ngày của tháng hiện tại và tháng tiếp đó nên mình sẽ lấy dư ra vài ngày và cắt bớt. Bạn đọc code sẽ hiểu thêm.</p>
+<p>Đầu tiên là init các ngày của mảng mình sẽ có hàm <code class="language-plaintext highlighter-rouge">getDays</code> bên trong đấy sẽ có 2 hàm là <code class="language-plaintext highlighter-rouge">getDaysOfPrevMonth</code> và <code class="language-plaintext highlighter-rouge">getDaysOfMonth</code> sẽ trả về các ngày của tháng trước, và các ngày sau đó. Vì sao đoạn này mình lại <code class="language-plaintext highlighter-rouge">days.slice(0, MAX_DAYS)</code> ? Đoạn này do mình lười tính toàn số ngày của tháng hiện tại và tháng tiếp đó nên mình sẽ lấy dư ra vài ngày và cắt bớt. Bạn đọc code sẽ hiểu thêm.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">getDays</span> <span class="o">=</span> <span class="p">(</span><span class="nx">month</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">days</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">getDaysOfPrevMonth</span><span class="p">(</span><span class="nx">month</span><span class="p">),</span> <span class="p">...</span><span class="nx">getDaysOfMonth</span><span class="p">(</span><span class="nx">month</span><span class="p">)];</span>
@@ -163,7 +171,7 @@ var _hmt = _hmt || [];
 <span class="p">};</span>
 </code></pre></div></div>
 
-<p>Đây là hàm lấy gày của tháng hiện tại như bạn có thể thấy là hàm <code class="highlighter-rouge">getFirstDayIndex</code> sẽ trả về ngày đầu tiên của tháng là index thứ bao nhiêu của mảng. Sau đó sẽ lùi dần về ngày của các tháng trước đó</p>
+<p>Đây là hàm lấy gày của tháng hiện tại như bạn có thể thấy là hàm <code class="language-plaintext highlighter-rouge">getFirstDayIndex</code> sẽ trả về ngày đầu tiên của tháng là index thứ bao nhiêu của mảng. Sau đó sẽ lùi dần về ngày của các tháng trước đó</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">getDaysOfPrevMonth</span> <span class="o">=</span> <span class="p">(</span><span class="nx">month</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">firstDayIndex</span> <span class="o">=</span> <span class="nx">getFirstDayIndex</span><span class="p">(</span><span class="nx">month</span><span class="p">);</span>
@@ -181,7 +189,7 @@ var _hmt = _hmt || [];
 <span class="p">};</span>
 </code></pre></div></div>
 
-<p>Mình sẽ dùng hàm <code class="highlighter-rouge">getDay</code> để lấy ra thứ hiện tại trong tháng (thứ 2, chủ nhật…) đồng thời cũng là index của mảng luôn. Ngoài ra javascript còn có hàm <code class="highlighter-rouge">getDate</code> trả về ngày hôm đấy là ngày bao nhiêu của tháng nữa. 2 hàm này rất dễ lẫn lộn với nhau.</p>
+<p>Mình sẽ dùng hàm <code class="language-plaintext highlighter-rouge">getDay</code> để lấy ra thứ hiện tại trong tháng (thứ 2, chủ nhật…) đồng thời cũng là index của mảng luôn. Ngoài ra javascript còn có hàm <code class="language-plaintext highlighter-rouge">getDate</code> trả về ngày hôm đấy là ngày bao nhiêu của tháng nữa. 2 hàm này rất dễ lẫn lộn với nhau.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">getFirstDayIndex</span> <span class="o">=</span> <span class="p">(</span><span class="nx">month</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
@@ -192,7 +200,7 @@ var _hmt = _hmt || [];
 <span class="p">};</span>
 </code></pre></div></div>
 
-<p>Tiếp đến sẽ là hàm lấy tất cả những ngày còn lại. <code class="highlighter-rouge">MAX_DAYS</code> của mình đang để là 35.</p>
+<p>Tiếp đến sẽ là hàm lấy tất cả những ngày còn lại. <code class="language-plaintext highlighter-rouge">MAX_DAYS</code> của mình đang để là 35.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">getDaysOfMonth</span> <span class="o">=</span> <span class="p">(</span><span class="nx">month</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">days</span> <span class="o">=</span> <span class="p">[];</span>
